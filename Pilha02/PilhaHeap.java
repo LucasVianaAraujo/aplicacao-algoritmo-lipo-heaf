@@ -55,19 +55,19 @@ public class PilhaHeap {
         double nota2 = Double.parseDouble(textoNota2);
         Media media = new Media(nome, nota1, nota2);
         pilha.push(media);
-        JOptionPane.showMessageDialog(null, "Aluno empilhado.\nMédia: " + media.getMedia());
+        JOptionPane.showMessageDialog(null, "Aluno empilhado\nMédia: " + media.getMedia());
     }
 
     private static void desempilhar(Pilha pilha) {
         Media media = pilha.pop();
         if (media == null) {
-            JOptionPane.showMessageDialog(null, "A pilha está vazia.");
+            JOptionPane.showMessageDialog(null, "Pilha vazia");
             return;
         }
 
         JOptionPane.showMessageDialog(
                 null,
-                "Aluno removido da pilha:\n"
+                "Aluno removido:\n"
                         + "Nome: " + media.getNome() + "\n"
                         + "Nota 1: " + media.getNota1() + "\n"
                         + "Nota 2: " + media.getNota2() + "\n"
