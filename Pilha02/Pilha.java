@@ -20,4 +20,26 @@ public class Pilha {
     public boolean estaVazia() {
         return topo == null;
     }
+
+    
+    public String plotar() {
+        if (topo == null) {
+            return null;
+        }
+
+        String texto = "";
+        RegPilha aux = topo;
+
+        while (aux != null) {
+            texto += aux.getMedia().toString() + "\n\n";
+            aux = aux.getProximo();
+        }
+
+        return texto;
+    }
+
+    public void destruir() {
+    topo = null;
+}
+
 }

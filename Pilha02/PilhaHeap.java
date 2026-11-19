@@ -11,7 +11,7 @@ public class PilhaHeap {
         while (executando) {
             String opcao = JOptionPane.showInputDialog(
                     null,
-                    "1 - Push\n2 - Pop\n5 - Sair",
+                    "1 - Push\n2 - Pop\n3 - Plotar\n4 - Destruir\n5 - Sair",
                     "MENU PILHA HEAP",
                     JOptionPane.QUESTION_MESSAGE);
 
@@ -26,6 +26,11 @@ public class PilhaHeap {
                 case "2":
                     desempilhar(pilha);
                     break;
+                case "3":
+                    plotar(pilha);
+                    break;
+                case "4":
+                    destruir(pilha);
                 case "5":
                     executando = false;
                     break;
@@ -72,5 +77,19 @@ public class PilhaHeap {
                         + "Nota 1: " + media.getNota1() + "\n"
                         + "Nota 2: " + media.getNota2() + "\n"
                         + "Média: " + media.getMedia());
+    }
+
+    private static void plotar(Pilha pilha) {
+        String texto = pilha.plotar();
+        if (texto == null) {
+            JOptionPane.showMessageDialog(null, "Pilha vazia");
+            return;
+        }
+        JOptionPane.showMessageDialog(null, texto);
+    }
+
+    private static void destruir(Pilha pilha) {
+        pilha.destruir();
+        JOptionPane.showMessageDialog(null, "Pilha destruída");
     }
 }
